@@ -10,6 +10,7 @@ resource "aws_docdb_cluster" "docdb" {
                                            # database it will take a snap shot in the end
 
    db_subnet_group_name = aws_docdb_subnet_group.docdb.name
+   vpc_security_group_ids = [aws_security_group.allows_docdb.id]
 }
 
 # Creates docdb instances and adds to the cluster
