@@ -22,6 +22,6 @@ resource "aws_security_group" "allows_docdb" {
   }
 
   tags = {
-    Name = "allows_private_traffic"
+    Name = "roboshop-${var.ENV}-docdb-sg"
   }
 }
