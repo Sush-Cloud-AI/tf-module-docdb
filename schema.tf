@@ -27,13 +27,13 @@ provisioner "local-exec" {
         command =  "wget -nc -P /tmp/ https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem"
             
         }
-# provisioner "local-exec" {
-#         command = " mysql -h ${aws_db_instance.mysql.address} -uadmin1 -proboshop1 < /tmp/catalogue.js"
+provisioner "local-exec" {
+        command = "mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile tmp/global-bundle.pem --username admin1 --password roboshop1 < catalogue.js"
             
-#         }
-#  provisioner "local-exec" {
-#         command = "rm -rf /tmp/shipping.sql"
+        }
+ provisioner "local-exec" {
+        command = "mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile tmp/global-bundle.pem --username admin1 --password roboshop1 < users.js"
             
-#         }      
+        }      
 
     }
