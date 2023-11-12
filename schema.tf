@@ -24,7 +24,7 @@ provisioner "local-exec" {
             
         }
 provisioner "local-exec" {
-        command =  "wget -o -P /tmp https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem "
+        command =  "wget -o https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem"
             
         }
 # provisioner "local-exec" {
