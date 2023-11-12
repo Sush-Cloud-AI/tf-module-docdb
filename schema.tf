@@ -27,10 +27,10 @@ provisioner "local-exec" {
         command =  "wget -P /tmp/ https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem"
             
         }
-provisioner "local-exec" {
-        command = " mysql -h ${aws_db_instance.mysql.address} -uadmin1 -proboshop1 < /tmp/catalogue.js"
+# provisioner "local-exec" {
+#         command = " mysql -h ${aws_db_instance.mysql.address} -uadmin1 -proboshop1 < /tmp/catalogue.js"
             
-        }
+#         }
 #  provisioner "local-exec" {
 #         command = "rm -rf /tmp/shipping.sql"
             
