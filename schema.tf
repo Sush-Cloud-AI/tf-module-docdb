@@ -28,11 +28,11 @@ provisioner "local-exec" {
             
         }
 provisioner "local-exec" {
-        command = "mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile tmp/global-bundle.pem --username admin1 --password roboshop1 < /tmp/catalogue.js"
+        command = "mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile /tmp/global-bundle.pem --username admin1 --password roboshop1 < /tmp/catalogue.js"
             
         }
  provisioner "local-exec" {
-        command = "mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile tmp/global-bundle.pem --username admin1 --password roboshop1 < /tmp/users.js"
+        command = "mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile /tmp/global-bundle.pem --username admin1 --password roboshop1 < /tmp/users.js"
             
         }      
 
