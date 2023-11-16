@@ -1,4 +1,4 @@
-# # # Injecting the schema
+# # # Injecting the schema into docdb
 resource "null_resource" "schema" {
 
 depends_on = [aws_docdb_cluster_instance.cluster_instances, aws_docdb_cluster.docdb]  
